@@ -1,0 +1,236 @@
+:root {
+    /* theme colors */
+    --bg-gradient-start: #1e1e2f;
+    --bg-gradient-end: #0f0f1f;
+    --accent: #00d4ff;
+    --accent-dark: #009ec3;
+    --card-bg: #2a2a3d;
+    --card-text: #f0f0f5;
+    --button-bg: var(--accent);
+    --button-hover: var(--accent-dark);
+    --input-bg: #1e1e2f;
+    --input-border: #444459;
+    --error-bg: #ff4d4d;
+    --success-bg: #4caf50;
+}
+
+.App {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--card-text);
+}
+
+.App-header {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px 20px;
+    color: var(--card-text);
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.App-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.App-header p {
+    margin: 0;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.wallet-input-section {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    color: var(--card-text);
+}
+
+.wallet-input-section h2 {
+    margin: 0 0 20px 0;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid var(--input-border);
+    border-radius: 5px;
+    font-size: 1em;
+    background: var(--input-bg);
+    color: var(--card-text);
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2);
+}
+
+.input-group button {
+    padding: 12px 30px;
+    background-color: var(--button-bg);
+    color: #1e1e2f;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.input-group button:hover:not(:disabled) {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.4);
+}
+
+.input-group button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.error-message {
+    padding: 12px 15px;
+    background-color: var(--error-bg);
+    border-left: 4px solid #ff1e1e;
+    color: #ffffff;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.success-message {
+    padding: 12px 15px;
+    background-color: var(--success-bg);
+    border-left: 4px solid #00e676;
+    color: #1e1e1e;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    padding: 12px 20px;
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    border: 2px solid #444459;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.tab-button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.tab-button.active {
+    background-color: var(--accent);
+    color: #1e1e2f;
+    border-color: var(--accent);
+}
+
+.content-section {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.input-group input::placeholder {
+    color: #999;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Copy button styles */
+.copy-btn {
+    background: var(--accent);
+    border: none;
+    color: #1e1e2f;
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: 4px 8px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: rgba(102, 126, 234, 0.1);
+}
+
+.copied-feedback {
+    color: #4caf50;
+    font-size: 0.85em;
+    margin-left: 4px;
+}
+
+@media (max-width: 768px) {
+    .App-header h1 {
+        font-size: 1.8em;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .wallet-input-section,
+    .content-section {
+        padding: 20px;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tab-button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,213 @@
+.transaction-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.transaction-form-container h2 {
+    margin: 0 0 25px 0;
+    color: var(--card-text);
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.transaction-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--card-text);
+    font-size: 0.95em;
+}
+
+.form-input {
+    padding: 12px 15px;
+    border: 2px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 1em;
+    font-family: inherit;
+    background: var(--input-bg);
+    color: var(--card-text);
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.2);
+    background-color: var(--input-bg);
+}
+
+.form-input.disabled {
+    background-color: #333;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.form-hint {
+    color: #d9534f;
+    font-size: 0.85em;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.submit-button {
+    padding: 14px 20px;
+    background: var(--button-bg);
+    color: #1e1e2f;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s, transform 0.1s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.submit-button:hover:not(:disabled) {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+.submit-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.message {
+    padding: 15px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 15px;
+    border-left: 4px solid;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.success {
+    background-color: var(--success-bg);
+    color: #1e1e1e;
+    border-left-color: #00e676;
+}
+
+.message.error {
+    background-color: var(--error-bg);
+    color: #ffffff;
+    border-left-color: #ff1e1e;
+}
+
+.transaction-result {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border-left: 4px solid var(--accent);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.3s ease-out;
+}
+
+.transaction-result h3 {
+    margin: 0 0 15px 0;
+    color: var(--card-text);
+    font-size: 1.1em;
+}
+
+.result-item {
+    margin-bottom: 15px;
+}
+
+.result-item label {
+    display: block;
+    font-weight: 600;
+    color: var(--card-text);
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.result-item code {
+    display: block;
+    background-color: #1e1e2f;
+    color: #f8f8f2;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85em;
+    word-break: break-all;
+    overflow-x: auto;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.xdr-code {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.info-box {
+    background: var(--card-bg);
+    border-left: 4px solid var(--accent);
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 25px;
+}
+
+.info-box h4 {
+    margin: 0 0 10px 0;
+    color: var(--accent);
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-box p {
+    margin: 0 0 10px 0;
+    color: var(--card-text);
+}
+
+.info-box ul {
+    margin: 10px 0 0 20px;
+    color: #333;
+}
+
+.info-box ul li {
+    margin: 5px 0;
+}
+
+.info-box a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.info-box a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .transaction-form-container {
+        padding: 0;
+    }
+}

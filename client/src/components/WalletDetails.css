@@ -1,0 +1,211 @@
+.wallet-details {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.detail-card {
+    background: var(--card-bg);
+    color: var(--card-text);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.detail-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+.detail-card p {
+    margin: 0;
+    font-size: 1.1em;
+    word-break: break-all;
+}
+
+.detail-card .highlight {
+    font-size: 1.4em !important;
+    font-weight: bold;
+}
+
+.account-id {
+    font-size: 0.75em !important;
+    font-family: 'Courier New', monospace;
+    line-height: 1.4;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.copy-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    cursor: pointer;
+    font-size: 0.75em;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    margin-top: 8px;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.balances-section,
+.signers-section,
+.transactions-section {
+    margin-top: 20px;
+}
+
+.balances-section h3,
+.signers-section h3,
+.transactions-section h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 1.3em;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+}
+
+.balances-table,
+.signers-table {
+    overflow-x: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table thead {
+    background: var(--card-bg);
+    border-bottom: 2px solid #444459;
+    color: var(--card-text);
+}
+
+table th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: white;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #444459;
+    background-color: var(--card-bg);
+    color: var(--card-text);
+}
+
+table tbody tr:hover {
+    background-color: #f5f9ff;
+}
+
+.balance-amount {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 1.1em;
+}
+
+.signer-key {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85em;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.type-badge {
+    background-color: #e8eaf6;
+    color: #667eea;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.transactions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.transaction-item {
+    background: var(--card-bg);
+    border-left: 4px solid var(--accent);
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.transaction-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+.tx-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.tx-hash {
+    font-family: 'Courier New', monospace;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.tx-type {
+    background: var(--accent);
+    color: #1e1e2f;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.tx-details {
+    font-size: 0.9em;
+    color: var(--card-text);
+}
+
+.tx-details p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tx-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

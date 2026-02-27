@@ -1,0 +1,32 @@
+{
+    "name": "stellar-testnet-webapp",
+    "version": "1.0.0",
+    "description": "Stellar testnet webapp for wallet management and transactions",
+    "main": "server/index.js",
+    "scripts": {
+        "start": "node server/index.js",
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "nodemon server/index.js",
+        "client": "cd client && npm start",
+        "build": "cd client && npm run build"
+    },
+    "keywords": [
+        "stellar",
+        "testnet",
+        "wallet",
+        "transactions"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.18.2",
+        "stellar-sdk": "^11.0.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "axios": "^1.4.0"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1",
+        "concurrently": "^8.2.0"
+    }
+}
